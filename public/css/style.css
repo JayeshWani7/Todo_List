@@ -6,7 +6,7 @@ html{
 }
 
 h1{
-    color: #fff;
+    color: #000;
     padding: 10px;
     
 }
@@ -21,18 +21,18 @@ h1{
     background-color: #a683e3;
     text-align: center;
 }
-.item{
+.items{
     min-height: 70px;
     display: flex;
     align-items: center;
     border-bottom: 1px solid #f1f1f1;
 }
-.item:last-child{
+.items:last-child{
     border-bottom: 0;
 }
 input:checked+p {
     text-decoration: line-through;
-    text-decoration: #a683e3;
+    text-decoration-color: #a683e3;
 }
 input[type ="checkbox"] {
     margin: 20px;

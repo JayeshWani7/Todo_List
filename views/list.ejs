@@ -10,7 +10,10 @@
         </div>
         <div class="box">
             <% for(var i = 0 ; i < ejes.length ; i++){%>
+                <div class="items">
+                    <input type="checkbox">
                     <p><%= ejes[i] %></p>
+                </div>
             <% } %>
 
             <form action="/" method="POST">
