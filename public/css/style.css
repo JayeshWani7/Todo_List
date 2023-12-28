@@ -21,7 +21,7 @@ h1{
     background-color: #a683e3;
     text-align: center;
 }
-.items{
+.item{
     min-height: 70px;
     display: flex;
     align-items: center;

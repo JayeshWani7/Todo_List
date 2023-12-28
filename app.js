@@ -84,17 +84,25 @@ todo4.save()
         todo.save();
         res.redirect("/");
     });
-    app.post("/delete",function(req,res){
+    app.post("/delete", function (req, res) {
         const checked = req.body.checkbox1;
-        Item.findByIdAndDelete(checked,function(err){
-            if(!err){
-                console.log("Deleted");
-                res.redirect("/");
-            }
-            
-        });
+        Item.findByIdAndDelete(checked)
+            .then((deletedItem) => {
+                if (deletedItem) {
+                    console.log("Deleted:", deletedItem);
+                    res.redirect("/");
+                } else {
+                    console.log("Item not found");
+                    res.redirect("/");
+                }
+            })
+            .catch((err) => {
+                console.error("Error:", err);
+                res.status(500).send("Internal Server Error");
+            });
     });
     
-    app.listen(3000, function() {
-        console.log("Server is running on port 3000");
+    
+    app.listen(4000, function() {
+        console.log("Server is running on port 4000");
     });
