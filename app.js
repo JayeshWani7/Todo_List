@@ -1,13 +1,13 @@
 const bodyParser = require("body-parser");
-/*var items = [];
+/*var Item = [];
 var example = "working";
 app.get("/",function(req,res){
-    res.render("list",{ejes : items});
+    res.render("list",{ejes : Item});
 });
 
 app.post("/",function(req,res){
     var item = req.body.ele1;
-    items.push(item);
+    Item.push(item);
     res.redirect("/"); 
 });
 
@@ -35,7 +35,7 @@ const todo2 = new Item({ name: "Learn DSA" });
 const todo3 = new Item({ name: "Learn React" });
 const todo4 = new Item({ name: "Take Some Rest" });
 */
-// Save the items to the database
+// Save the Item to the database
 /* todo.save()
     .then(() => {
         console.log("Todo saved");
@@ -83,6 +83,16 @@ todo4.save()
         });
         todo.save();
         res.redirect("/");
+    });
+    app.post("/delete",function(req,res){
+        const checked = req.body.checkbox1;
+        Item.findByIdAndDelete(checked,function(err){
+            if(!err){
+                console.log("Deleted");
+                res.redirect("/");
+            }
+            
+        });
     });
     
     app.listen(3000, function() {
