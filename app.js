@@ -29,3 +29,16 @@ const item = mongoose.model("task",trySchema);
 const todo = new item({
     name:"Create Some Videos"
 }); 
+const todo2 = new item({
+    name:"Learn DSA"
+});
+const todo3 = new item({
+    name:"Learn React"
+});
+const todo4 = new item({
+    name:"Take Some Rest"
+});
+todo.save;
+todo2.save;
+todo3.save;
+todo4.save;
